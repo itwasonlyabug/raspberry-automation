@@ -1,0 +1,4 @@
+path_to_cmd_txt: '/var/run/media/{{ local_username.stdout }}/boot/cmdline.txt'
+path_to_config_txt: '/var/run/media/{{ local_username.stdout }}/boot/config.txt'
+path_to_ssh: '/var/run/media/{{ local_username.stdout }}/boot/ssh'
+path_to_wpa_supplicant_conf: '/var/run/media/{{ local_username.stdout }}/boot/wpa_supplicant.conf'

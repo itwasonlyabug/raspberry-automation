@@ -1,0 +1,8 @@
+---
+- name: Setup RaspberryPi SD card
+  hosts: 127.0.0.1
+  connection: local
+  roles:
+    - role: '../roles/sd-card-prep/'
+      tags:
+        - sd-prep

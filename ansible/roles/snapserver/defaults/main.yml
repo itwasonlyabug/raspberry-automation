@@ -1,0 +1,2 @@
+snapserver_version: 0.24
+snapserver_dockerfiles_folder: "/opt/snapserver/dockerfiles"

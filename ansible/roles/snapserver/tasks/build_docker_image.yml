@@ -1,0 +1,9 @@
+- name: Copy Dockerfiles
+  copy:
+    src: "dockerfiles/"
+    dest: "{{ snapserver_dockerfiles_folder }}/"
+
+- name: Build Dockerfile
+  shell:
+    cmd: "docker build . -t snapserver:{{ snapserver_version }}"
+    chdir: "{{ snapserver_dockerfiles_folder }}/snapserver_{{ snapserver_version }}"

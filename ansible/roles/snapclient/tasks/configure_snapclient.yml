@@ -1,0 +1,10 @@
+- name: Copy Snapclient settings
+  template:
+    src: 'snapclient.j2'
+    dest: '/etc/default/snapclient'
+
+- name: Systemd Daemon-Reload
+  service:
+    name: "snapclient"
+    enabled: yes
+    state: restarted

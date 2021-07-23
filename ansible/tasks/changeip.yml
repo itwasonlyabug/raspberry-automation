@@ -1,0 +1,18 @@
+- name: Set static IP
+  become: true
+  blockinfile:
+    backup: yes
+    path: /etc/dhcpcd.conf
+    state: present
+    insertafter: EOF
+    block: |
+      # Static IP configuration:
+      interface wlan0
+      static ip_address={{ raspberry_ip }}/{{ ip_mask_prefix }}
+      static routers={{ ip_default_gateway }}
+
+- name: Restart DHCPCD
+  become: true
+  service:
+    name: dhcpcd
+    state: restarted

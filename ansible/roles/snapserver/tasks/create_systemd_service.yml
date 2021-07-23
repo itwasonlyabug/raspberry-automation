@@ -1,0 +1,13 @@
+- name: Create Systemd Service
+  template:
+    src: 'snapserver.service.j2'
+    dest: '/etc/systemd/system/snapserver.service'
+
+- name: Systemd Daemon-Reload
+  service:
+    name: "snapserver"
+    enabled: yes
+    state: "{{ item }}"
+  loop:
+    - reloaded
+    - restarted

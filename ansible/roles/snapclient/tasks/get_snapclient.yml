@@ -1,0 +1,4 @@
+- name: Download Snapclient
+  get_url:
+    url: "https://github.com/badaix/snapcast/releases/download/v{{ snapclient_version }}/snapclient_{{ snapclient_version }}-{{ snapclient_revision }}_{{ client_architecture }}.deb"
+    dest: "{{ download_folder }}"

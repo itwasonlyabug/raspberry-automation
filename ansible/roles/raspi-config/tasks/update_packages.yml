@@ -1,0 +1,3 @@
+- name: Update APT repo list
+  apt:
+    update_cache: yes

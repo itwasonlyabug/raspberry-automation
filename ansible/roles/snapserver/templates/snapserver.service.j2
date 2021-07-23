@@ -1,0 +1,11 @@
+[Unit]
+Description=Snapserver Container
+After=docker.service
+Requires=docker.service
+
+[Service]
+Environment="SNAP_VERSION={{ snapserver_version }}"
+ExecStart=/usr/bin/docker run --rm --name snapserver --network host snapserver:${SNAP_VERSION}
+
+[Install]
+WantedBy=multi-user.target

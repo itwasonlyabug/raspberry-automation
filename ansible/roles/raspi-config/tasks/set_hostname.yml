@@ -1,0 +1,6 @@
+- name: Set Hostname
+  shell:
+    cmd: |
+      echo {{ new_hostname }} > /etc/hostname
+      sed -i "s/127.0.1.1.*/127.0.1.1\t{{ new_hostname }}/g" /etc/hosts
+      hostname "{{ new_hostname }}"

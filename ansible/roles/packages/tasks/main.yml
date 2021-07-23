@@ -1,0 +1,6 @@
+- name: Install Packages
+  become: true
+  apt:
+    state: present
+    name: "{{ item }}"
+  loop: "{{ packages_to_install }}"

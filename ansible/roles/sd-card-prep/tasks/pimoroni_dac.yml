@@ -1,0 +1,10 @@
+- name: Add DAC to config.txt
+  lineinfile:
+    path: "{{ path_to_config_txt }}"
+    line: '{{ item }}'   
+    state: present
+  loop:
+    - 'dtoverlay=hifiberry-dac'
+    - 'gpio=25=op,dh'
+
+

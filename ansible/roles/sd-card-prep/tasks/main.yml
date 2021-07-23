@@ -1,0 +1,14 @@
+---
+- name: Get the local username
+  become: false
+  local_action: command whoami
+  register: local_username
+
+- include: enable_ssh.yml
+- include: ssh_over_usb.yml
+  when: ssh_over_usb
+- include: enable_wifi.yml
+  when: enable_wifi
+- include: pimoroni_dac.yml
+  when: enable_hifiberry_dac
+

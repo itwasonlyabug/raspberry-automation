@@ -1,0 +1,2 @@
+- name: Set Timezone
+  shell: timedatectl set-timezone Europe/Sofia

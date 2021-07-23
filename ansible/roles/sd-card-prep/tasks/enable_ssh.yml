@@ -1,0 +1,4 @@
+- name: Create SSH file
+  file:
+    path: "{{ path_to_ssh }}"
+    state: touch

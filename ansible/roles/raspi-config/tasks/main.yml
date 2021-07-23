@@ -1,0 +1,11 @@
+---
+- include: set_hostname.yml
+  become: true
+- include: set_keyboard.yml
+  become: true
+- include: set_timezone.yml
+  become: true
+- include: update_packages.yml
+  become: true
+- include: upgrade_os.yml
+  become: true

@@ -1,0 +1,13 @@
+- name: Edit config.txt
+  lineinfile:
+    path: "{{ path_to_config_txt }}"
+    line: 'dtoverlay=dwc2'   
+    state: present
+
+- name: Edit cmd.txt
+  lineinfile:
+    path: "{{ path_to_cmd_txt }}"
+    insertafter: 'rootwait\s'
+    line: 'modules-load=dwc2,g_ether'
+    state: present
+    firstmatch: yes

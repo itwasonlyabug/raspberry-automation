@@ -1,0 +1,28 @@
+all:
+  vars:
+    keymap: us
+    enable_wifi: true
+    enable_hifi_dac: true
+    ssh_over_usb: true
+    ip_mask_prefix: '24'
+    ip_default_gateway: '192.168.1.1'
+    raspimain_address: '192.168.1.200'
+  hosts:
+    raspimain:
+      ansible_host: 192.168.1.145
+      new_hostname: raspimain
+      packages_to_install:
+        - vim
+        - git
+        - curl
+        - python3-pip
+      raspberry_ip: '192.168.1.200'
+  children:
+    snapclients:
+      hosts:
+        raspiaudio02:
+          ansible_host: 192.168.1.233
+          new_hostname: raspiaudio02
+          raspberry_ip: '192.168.1.202'
+          snapclient_buffer_time: 40
+          snapclient_fragments: 10

@@ -1,0 +1,7 @@
+---
+- include: install_convenience_scripts.yml
+  become: true
+- include: install_docker_compose.yml
+  become: true
+- include: update_libseccomp.yml
+  become: true

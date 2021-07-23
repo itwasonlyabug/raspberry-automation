@@ -1,0 +1,23 @@
+---
+- name: Setup Raspberry Pi4
+  hosts: raspimain
+  remote_user: pi
+
+  roles:
+    - role: '../roles/raspi-config/' 
+      tags:
+        - raspi-config
+    - role: '../roles/packages/'
+      tags:
+        - packages
+    - role: '../roles/docker/'
+      tags:
+        - docker
+    - role: '../roles/snapserver/'
+      tags:
+        - snapserver
+
+  tasks: 
+    - import_tasks: '../tasks/changeip.yml'
+      tags:
+        - changeip

@@ -1,0 +1,13 @@
+- name: Set Keyboard Map
+  shell:
+    cmd: sed -i /etc/default/keyboard -e "s/^XKBLAYOUT.*/XKBLAYOUT=\"{{ keymap }}\"/" && dpkg-reconfigure -f noninteractive keyboard-configuration
+
+- name: Set Localectl
+  shell:
+    cmd: localectl set-keymap --no-convert "{{ keymap }}"
+      #- name: Finalize Keyboard Map
+      #  shell:
+      #    cmd: |   
+      #      invoke-rc.d keyboard-setup start
+      #      setsid sh -c 'exec setupcon -k --force <> /dev/tty1 >&0 2>&1'
+      #      udevadm trigger --subsystem-match=input --action=change

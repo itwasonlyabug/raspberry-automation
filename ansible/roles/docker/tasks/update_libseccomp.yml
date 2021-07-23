@@ -1,0 +1,8 @@
+- name: Download Libseccomp
+  get_url:
+    url: "http://ftp.de.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.1-1_armhf.deb"
+    dest: "/tmp/"
+
+- name: Install / Update libseccomp
+  apt:
+    deb: "/tmp/libseccomp2_2.5.1-1_armhf.deb"

@@ -1,0 +1,12 @@
+---
+- name: Setup Snapclients
+  hosts: snapclients
+  remote_user: pi
+
+  roles:
+    - role: '../roles/raspi-config/' 
+      tags:
+        - raspi-config
+    - role: '../roles/snapclient/'
+      tags:
+        - snapclient

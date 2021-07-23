@@ -1,0 +1,15 @@
+- name: Get Convenience script
+  get_url:
+    url: "https://get.docker.com"
+    dest: /tmp/get-docker.sh
+    mode: 0700
+
+- name: Install docker via script
+  shell:
+    cmd: "/usr/bin/bash /tmp/get-docker.sh"
+
+- name: Restart & Enable
+  service:
+    name: docker
+    state: restarted
+    enabled: yes

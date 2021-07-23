@@ -1,0 +1,7 @@
+---
+- include: get_snapclient.yml
+  become: true
+- include: install_snapclient.yml
+  become: true
+- include: configure_snapclient.yml
+  become: true

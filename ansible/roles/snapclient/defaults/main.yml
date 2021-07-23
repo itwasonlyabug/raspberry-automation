@@ -1,0 +1,6 @@
+snapclient_version: '0.25.0'
+snapclient_revision: '1'
+download_folder: "/tmp/"
+client_architecture: 'armhf'
+snapclient_buffer_time: 40
+snapclient_fragments: 10

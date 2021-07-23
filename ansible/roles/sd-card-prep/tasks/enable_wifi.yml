@@ -1,0 +1,13 @@
+- name: Configure WPA Supplicant
+  blockinfile:
+    path: "{{ path_to_wpa_supplicant_conf }}"
+    create: yes
+    block: |
+      ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+      country={{ wifi_country }}
+      update_config=1
+      network={
+        ssid="{{ wifi_ssid }}"
+        psk="{{ wifi_password }}"
+        key_mgmt=WPA-PSK
+      }

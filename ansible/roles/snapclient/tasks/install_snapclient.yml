@@ -1,0 +1,3 @@
+- name: Install Snapclient
+  apt:
+    deb: "{{ download_folder }}/snapclient_{{ snapclient_version }}-{{ snapclient_revision }}_{{ client_architecture }}.deb"
